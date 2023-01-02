@@ -32,6 +32,20 @@ services:
     networks:
       - cashforce_net
 
+  frontend:
+    build: ./frontend
+    container_name: cashforce_frontend
+    restart: always
+    working_dir: /app
+    volumes:
+      - ./frontend:/app
+    depends_on:
+      - node
+    ports:
+      - 5173:5173
+    networks:
+      - cashforce_net
+
 networks:
   cashforce_net:
     driver: bridge
