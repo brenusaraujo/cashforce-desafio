@@ -5,7 +5,7 @@ services:
     build: ./backend
     container_name: cashforce_backend
     restart: always
-    working_dir: /app
+    working_dir: /app  
     command: npm start
     depends_on:
       db:
@@ -13,7 +13,7 @@ services:
     ports:
       - 3000:3000
     networks:
-      - cashforcenetworking
+      - cashforce_net
 
   db:
     container_name: cashforce_db
@@ -21,7 +21,7 @@ services:
     platform: linux/x86_64
     restart: always
     healthcheck:
-      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"] # Deve aguardar o banco ficar operacional
+      test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"] # Deve aguardar o banco ficar operacional
       timeout: 10s
       retries: 5
     ports:
@@ -30,7 +30,8 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-password} # defina a variável em .env caso queira usar outro valor
     networks:
-      - cashforcenetworking
+      - cashforce_net
+
 networks:
-  cashforcenetworking:
+  cashforce_net:
     driver: bridge
