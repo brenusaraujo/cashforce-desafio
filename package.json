@@ -1,0 +1,11 @@
+{
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "populate": "docker exec cashforce_backend /bin/sh -c 'npm run populate'",
+    "compose:up": "docker compose up -d --build && npm run populate",
+    "compose:down": "docker compose down -v",
+    "compose:dev:up": "docker compose -f docker-compose.dev.yml up -d --build && npm run populate",
+    "compose:dev:down": "docker compose -f docker-compose.dev.yml down -v"
+  }
+}
