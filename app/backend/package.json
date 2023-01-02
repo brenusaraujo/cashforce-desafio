@@ -10,7 +10,7 @@
     "populate": "node -e \"require('./src/utils/dbUtils').migrate()\"",
     "start:populate": "node . && npm run populate"
   },
-  "author": "Bruno Fernandes Pessoa",
+  "author": "Breno Araujo",
   "license": "ISC",
   "devDependencies": {
     "nodemon": "^2.0.20",
