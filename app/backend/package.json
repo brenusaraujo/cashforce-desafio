@@ -7,10 +7,10 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node .",
     "dev": "nodemon .",
-    "populate": "node -e \"require('./src/utils/dbUtils').migrate()\"",
+    "populate": "node -e \"require('./src/utils/db.utils').populateDb()\"",
     "start:populate": "node . && npm run populate"
   },
-  "author": "Breno Araujo",
+  "author": "Breno Araújo",
   "license": "ISC",
   "devDependencies": {
     "nodemon": "^2.0.20",
