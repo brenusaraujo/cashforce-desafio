@@ -21,13 +21,13 @@ defineProps({
 
 <template>
   <div>
-    <div>
+    <div class="d-flex">
       <img :src="imageSource" :alt="imageAlt" />
-      <h1 class="title">
+      <h1 class="title text-d-blue mx-1">
         {{ title }}
       </h1>
     </div>
-    <p>
+    <p class="text-darkish fs-l">
       {{ subtitle }}
     </p>
   </div>
